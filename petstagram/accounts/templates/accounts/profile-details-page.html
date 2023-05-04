@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
 
     <!-- Start Profile Details Section -->
     <div class="profile">
@@ -11,7 +12,7 @@
                 <div class="image">
 
                     <!-- Profile Image -->
-                    <img src="/static/images/person.png" alt="img8">
+                    <img src="{% static 'images/person.png' %}" alt="img8">
                 </div>
             </div>
             <div class="personal">
