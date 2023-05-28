@@ -35,7 +35,7 @@
 
                 <!-- Start Pet Photo -->
                 <div class="imgBx" id="{{ photo.id }}">
-                    <img src="{% static 'images/axolotl.jpeg' %}" alt="post" class="cover">
+                    <img src="{{  photo.photo.url }}" alt="post" class="cover">
                 </div>
                 <!-- End Pet Photo -->
 
@@ -142,10 +142,10 @@
                             </h3>
                         </div>
                         <!-- Start Add Comments Form -->
-                        <form method="post" action="#">
-                            <label for="id_body">Body:</label>
-                            <textarea name="body" cols="40" rows="10" placeholder="Add comment..." maxlength="300"
-                                      required="" id="id_body"></textarea>
+{#                        TODO  {% url 'comment' photo.id %}#}
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            {{ comment_form }}
                             <button type="submit">Post</button>
                         </form>
                         <!-- End Add Comments Form -->
